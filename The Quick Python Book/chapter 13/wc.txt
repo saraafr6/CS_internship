@@ -1,0 +1,17 @@
+This topic is somewhat advanced but certainly not difficult. You can think of a shelve
+object as being a dictionary that stores its data in a file on disk rather than in memory,
+which means that you still have the convenience of access with a key, but you don’t
+have the limitations of the amount of available RAM.
+This section is likely of most interest to people whose work involves storing or
+accessing pieces of data in large files, because the Python shelve module does
+exactly that: permits the reading or writing of pieces of data in large files without reading or writing the entire file. For applications that perform many accesses of large files
+(such as database applications), the savings in time can be spectacular. Like the
+pickle module (which it uses), the shelve module is simple.
+In this section, you explore this module through an address book. This sort of
+thing usually is small enough that an entire address file can be read in when the application is started and written out when the application is done. If you’re an extremely
+friendly sort of person and your address book is too big for this example, it would be
+better to use shelve and not worry about it.
+Assume that each entry in your address book consists of a tuple of three elements,
+giving the first name, phone number, and address of a person. Each entry is indexed
+by the last name of the person the entry refers to. This setup is so simple that your
+application will be an interactive session with the Python shell.
